@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   CircularProgressbar,
   buildStyles
@@ -13,8 +13,18 @@ AOS.init();
 
 
 const About = () => {
+const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
+useEffect(() => {
+	console.log('window.innerWidth',window.innerWidth);
+	  const handleWindowResize = () => {
+	setWindowWidth(window.innerWidth);
+  };
 
+  window.addEventListener("resize", handleWindowResize);
+
+  return () => window.removeEventListener("resize", handleWindowResize);
+}, [window.innerWidth]);
 
 	const AnimatedProgressList = [
 		{
@@ -86,9 +96,9 @@ const About = () => {
 						data-aos-once="true"
 					>
 						{
-							window.innerWidth < 768 ?
+							windowWidth < 768 ?
 							<div className="d-skill">
-								<div className="d-info">
+								<div style={{display: 'flex', justifyContent: 'start'}}>
 									<span>{item.text}</span>
 								</div>
 								<Skillbar bgColor={"#ad8e6d"} progress={item.value} />
