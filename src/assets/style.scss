@@ -278,6 +278,7 @@ section, .section{
   min-height: 100vh;
   display: flex;
   align-items: center;
+  margin-top: 15px;
 }
 .list_location, .list_location li {
   list-style: none;
@@ -432,7 +433,7 @@ section, .section{
     font-size: 13px;
     font-weight: 600;
     padding: 0;
-    
+
     &.rev{
       padding: 20px 0;
     }
@@ -1320,6 +1321,8 @@ video.pop {
     display: none;
   }
 }
+
+
 
 @media only screen and (max-width: 992px){
   .burgermenu{

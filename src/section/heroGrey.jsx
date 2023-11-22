@@ -60,9 +60,9 @@ const hero = () => {
                         </Link>
                     </div>
 
-                    <div className="col-md-6">
-                        <img src={profile_picture}
-                             className="img-fluid" alt="imghero"/>
+                    <div className="col-md-6" style={{display: 'flex', justifyContent: 'center'}}>
+                        <img src={profile_picture} width={1000} height={800}
+                             alt="imghero"/>
                     </div>
                 </div>
             </div>

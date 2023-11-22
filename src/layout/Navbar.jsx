@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import shadyLogo from "../assets/shady-logo.png";
 
 const Navbar= function() {
 
@@ -30,13 +29,32 @@ const Navbar= function() {
         <nav className="navbar transition">
         <div className="container">
           <Link  className="navbar-brand" activeClass="active" spy to="hero-area">
-            <img src="./img/logo.png" className="img-fluid d-block imginit" alt="logo"/>
-            <img src="./img/logo-3.png" className="img-fluid imgsaly" alt="logo"/>
-            <img src={shadyLogo} className="img-fluid imggrey" alt="logo" style={{width: "140px", height: "150px"}}/>
-            <img src="./img/logo-7.png" className="img-fluid imgchef" alt="logo"/>
-            <img src="./img/logo-5.png" className="img-fluid imgdesigner" alt="logo"/>
-            <img src="./img/logo-4.png" className="img-fluid imglawyer" alt="logo"/>
-            <img src="./img/logo-2.png" className="img-fluid imgdark" alt="logo"/>
+            {/*<img src="./img/logo.png" className="img-fluid d-block imginit" alt="logo"/>*/}
+            {/*<img src="./img/logo-3.png" className="img-fluid imgsaly" alt="logo"/>*/}
+            {/*<img src={shadyLogo} className="img-fluid imggrey" alt="logo"  width={100} height={50} />*/}
+
+            {/*<img src="./img/logo-7.png" className="img-fluid imgchef" alt="logo"/>*/}
+            {/*<img src="./img/logo-5.png" className="img-fluid imgdesigner" alt="logo"/>*/}
+            {/*<img src="./img/logo-4.png" className="img-fluid imglawyer" alt="logo"/>*/}
+            {/*<img src="./img/logo-2.png" className="img-fluid imgdark" alt="logo"/>*/}
+              <h5 className="id-color" style={{font: 'normal normal 700 15px/25px Poppins',
+                   fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 800,
+                  lineHeight: '1.2',
+                  textAlign: 'center',
+                  textTransform: 'uppercase',
+                  border: '3px solid #333',
+                  padding: '10px',
+                  maxWidth: 'fit-content',
+                  margin: '0 auto',
+                  letterSpacing: '2px',
+                  boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+                  color: '#333',
+                  backgroundColor: '#fff',
+              }}
+              ><span style={{backgroundColor: 'black', color: 'white', padding: '5px 0px 5px 5px', borderRadius: '5px',marginRight: '5px'}}
+              >Shady </span>
+                  Elsayed</h5>
           </Link>
           {/* Desktop menu Here */}
           <div className="dekstopmenu">

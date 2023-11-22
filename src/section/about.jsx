@@ -8,10 +8,11 @@ import "react-circular-progressbar/dist/styles.css";
 import AnimatedProgressProvider from "../layout/AnimatedProgressProvider";
 
 import AOS from 'aos';
+import Skillbar from "../layout/skillbar";
 AOS.init();
 
 
-const hero = () => {
+const About = () => {
 
 
 
@@ -76,7 +77,7 @@ const hero = () => {
 			<div className="row" key={i / columnsPerRow}>
 				{rowItems.map((item, index) => (
 					<div
-						className="col-lg-3 p-5 text-center"
+						className="col-lg-3 col-md-4 col-sm-6 p-5 text-center"
 						key={index}
 						data-aos="fade"
 						data-aos-delay={500 + ((i + index) * 100)}
@@ -84,7 +85,17 @@ const hero = () => {
 						data-aos-easing="ease"
 						data-aos-once="true"
 					>
-						<AnimatedProgressProvider valueStart={0} valueEnd={item.value}>
+						{
+							window.innerWidth < 768 ?
+							<div className="d-skill">
+								<div className="d-info">
+									<span>{item.text}</span>
+								</div>
+								<Skillbar bgColor={"#ad8e6d"} progress={item.value} />
+							</div>:
+								<>
+						<AnimatedProgressProvider valueStart={0} valueEnd={item.value}
+						>
 							{(value) => {
 								const roundedValue = Math.round(value);
 								return (
@@ -104,6 +115,8 @@ const hero = () => {
 							}}
 						</AnimatedProgressProvider>
 						<h4 className="mt-2">{item.text}</h4>
+					</>
+					}
 					</div>
 				))}
 			</div>
@@ -146,4 +159,4 @@ const hero = () => {
 	);
 }
 
-export default hero;
+export default About;
