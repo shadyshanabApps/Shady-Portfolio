@@ -89,8 +89,8 @@ useEffect(() => {
 						className="col-lg-3 col-md-4 col-sm-6 p-5 text-center"
 						key={index}
 						data-aos="fade"
-						data-aos-delay={500 + ((i + index) * 100)}
-						data-aos-duration="1000"
+						data-aos-delay={index * 100}
+						data-aos-duration="800"
 						data-aos-easing="ease"
 						data-aos-once="true"
 					>
