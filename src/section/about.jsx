@@ -28,26 +28,10 @@ useEffect(() => {
 	const AnimatedProgressList = [
 		{
 			text : "React",
-			value : 80
+			value : 90
 		},
 		{
 			text : "Wordpress",
-			value : 80
-		},
-		{
-			text: "Git",
-			value: 80
-		},
-		{
-			text: "Ant Design",
-			value: 80
-		},
-		{
-			text: "Material Ui",
-			value: 80
-		},
-		{
-			text : "Javascript",
 			value : 80
 		},
 		{
@@ -55,8 +39,24 @@ useEffect(() => {
 			value : 70
 		},
 		{
+			text: "Git",
+			value: 80
+		},
+		{
+			text : "Javascript",
+			value : 90
+		},
+		{
 			text : "Typescript",
 			value : 70
+		},
+		{
+			text: "Ant Design",
+			value: 90
+		},
+		{
+			text: "Material Ui",
+			value: 80
 		},
 		{
 			text: "Redux Toolkit",
