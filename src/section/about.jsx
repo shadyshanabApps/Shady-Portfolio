@@ -16,7 +16,6 @@ const About = () => {
 const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
 useEffect(() => {
-	console.log('window.innerWidth',window.innerWidth);
 	  const handleWindowResize = () => {
 	setWindowWidth(window.innerWidth);
   };

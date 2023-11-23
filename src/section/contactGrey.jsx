@@ -51,7 +51,8 @@ const contact = () => {
                                 data-aos-easing="ease"
                             >
                             <div className="contact_form_wrapper">
-                                <form name="contactForm" id="contact_form" className="form-border" onSubmit={sendEmail}>
+                                <form name="contactForm" id="contact_form" className="form-border" action="https://formspree.io/f/xbjvvrgl"
+                                      method="POST" >
                                     <div className="row">
                                         <div className="col-md-4">
                                             <div className="field-set">
