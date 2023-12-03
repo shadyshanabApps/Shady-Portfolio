@@ -326,7 +326,7 @@ const Gallery= function() {
         },
         {
             title: "City Stores",
-            description: "Imagine Uber Eats for clothes! Our mobile app connects shoppers with nearby boutiques, making it easy to discover and buy trendy apparel from local stores. For stores, our user-friendly dashboard streamlines inventory uploads, helping them showcase their latest offerings to eager fashion enthusiasts.",
+            description: "Imagine Uber Eats for clothes! it's a mobile app that connects shoppers with nearby boutiques, making it easy to discover and buy trendy apparel from local stores. For stores, the user-friendly dashboard streamlines inventory uploads, helping them showcase their latest offerings to eager fashion enthusiasts.",
             client: "Graduation Project",
             type: "Mobile App",
             year: "2023",
@@ -352,7 +352,7 @@ const Gallery= function() {
         }
         ];
 
- 
+
 
     return(
             <div className="container">
