@@ -36,11 +36,11 @@ useEffect(() => {
 		},
 		{
 			text : "React Native",
-			value : 70
+			value : 80
 		},
 		{
 			text: "Git",
-			value: 80
+			value: 90
 		},
 		{
 			text : "Javascript",
@@ -48,7 +48,7 @@ useEffect(() => {
 		},
 		{
 			text : "Typescript",
-			value : 70
+			value : 80
 		},
 		{
 			text: "Ant Design",
@@ -60,7 +60,7 @@ useEffect(() => {
 		},
 		{
 			text: "Redux Toolkit",
-			value: 70
+			value: 80
 		},
 		{
 			text: "React Query",

@@ -31,6 +31,29 @@ import jewelryAddPurchase2 from '../assets/projects/jewelry/jewelry-add-purchase
 import jewelryAddPurchase3 from '../assets/projects/jewelry/jewelry-add-purchase3.PNG';
 import jewelryAddPurchase4 from '../assets/projects/jewelry/jewelry-add-purchase4.PNG';
 import jewelryPurchase from '../assets/projects/jewelry/jewelry-purchase.PNG';
+import cityStores1 from '../assets/projects/city-stores/city-stores1.jpg';
+import cityStores2 from '../assets/projects/city-stores/city-stores2.jpg';
+import cityStores3 from '../assets/projects/city-stores/city-stores3.jpg';
+import cityStores4 from '../assets/projects/city-stores/city-stores4.jpg';
+import cityStores5 from '../assets/projects/city-stores/city-stores5.jpg';
+import cityStores6 from '../assets/projects/city-stores/city-stores6.jpg';
+import cityStores7 from '../assets/projects/city-stores/city-stores7.jpg';
+import cityStores8 from '../assets/projects/city-stores/city-stores8.jpg';
+import cityStores9 from '../assets/projects/city-stores/city-stores9.jpg';
+import cityStores10 from '../assets/projects/city-stores/city-stores10.jpg';
+import cityStores11 from '../assets/projects/city-stores/city-stores11.jpg';
+import cityStores12 from '../assets/projects/city-stores/city-stores12.jpg';
+import cityStores13 from '../assets/projects/city-stores/city-stores13.jpg';
+import cityStores14 from '../assets/projects/city-stores/city-stores14.jpg';
+import cityStores15 from '../assets/projects/city-stores/city-stores15.jpg';
+import cityStores16 from '../assets/projects/city-stores/city-stores16.jpg';
+import cityStores17 from '../assets/projects/city-stores/city-stores17.jpg';
+import alRehaili1 from '../assets/projects/alrehaili/alrehaili1.PNG';
+import alRehaili2 from '../assets/projects/alrehaili/alrehaili2.PNG';
+import alRehaili3 from '../assets/projects/alrehaili/alrehaili3.PNG';
+import alRehaili4 from '../assets/projects/alrehaili/alrehaili4.PNG';
+import alRehaili5 from '../assets/projects/alrehaili/alrehaili5.PNG';
+
 AOS.init();
 
 const GlobalStyles = createGlobalStyle`
@@ -61,26 +84,128 @@ const Gallery= function() {
             title : "Lycee Balzak ERP",
             tag : "website",
             lighbx : 1,
+            stack: "React",
+            row: 1,
         },
         {
             img : standardAccounts,
             title : "Standard ERP",
             tag : "website",
             lighbx : 2,
+            stack: "React",
+            row: 1,
         },
         {
             img : hrHome,
             title : "HR",
             tag : "website",
             lighbx : 3,
+            stack: "React",
+            row: 1,
         },
         {
             img : jewelryAddPurchase2,
             title : "Jewelry",
             tag : "website",
             lighbx : 4,
+            stack: "React",
+            row: 1,
+        },
+        {
+            img : cityStores4,
+            title : "City Stores",
+            tag : "mobile app",
+            lighbx: 5,
+            stack: "React Native",
+            row: 2,
+        },
+        {
+            img : alRehaili1,
+            title : "Alrehaili",
+            tag : "website",
+            lighbx : 6,
+            stack: "Wordpress",
+            row: 2,
         },
     ];
+
+     const stackGroups = MasonryList.reduce((groups, item) => {
+        const val = item.stack;
+        groups[val] = groups[val] || [];
+        groups[val].push(item);
+        return groups;
+    }, {});
+
+    const StackMasonry = Object.entries(stackGroups).map(([stack, stackItems]) => (
+        <div key={stack} style={{marginBottom: '50px'}}>
+            <h2>{stack}</h2>
+            <Masonry className={"row my-gallery-class"} elementType={"div"} >
+                {stackItems.map((val, i) => (
+                    <div
+                        className="col-lg-6 image-element-class de_modal"
+                        onClick={() => handleBtnClick(val.lighbx)}
+                        data-aos="fade-up"
+                        data-aos-once="true"
+                        key={i}
+                        style={stack === "React Native" ? {width: '250px'} : {}}
+                    >
+                        <div className="card-image-1">
+                            <div className="d-text">
+                                <div>
+                                    <h3>{val.title}</h3>
+                                    {/*<h4>{val.stack}</h4>*/}
+                                </div>
+                                <h5 className="d-tag">{val.tag}</h5>
+                            </div>
+                            <img src={val.img} alt="gallery"
+                                 style={stack === "React Native" ? {maxHeight: '500px',objectFit: 'fill'} : {}}/>
+                        </div>
+                    </div>
+                ))}
+            </Masonry>
+        </div>
+    ));
+
+   /* const renderMasonryLayout = () => {
+        const rows = {};
+
+        // Group items by row number
+        MasonryList.forEach((item) => {
+            const { row } = item;
+            if (!rows[row]) {
+                rows[row] = { stack: item.stack, items: [] };
+            }
+            rows[row].items.push(item);
+        });
+
+        // Generate Masonry layout components for each row with stack titles
+        return Object.keys(rows).map((row) => (
+            <div key={`row_${row}`}>
+                <h2>{rows[row].stack}</h2>
+                <Masonry key={`masonry_${row}`} className={"row my-gallery-class"} elementType={"div"}>
+                    {rows[row].items.map((val, i) => (
+                        <div
+                            key={`item_${row}_${i}`}
+                            className="col-lg-6 image-element-class de_modal"
+                            onClick={() => handleBtnClick(val.lighbx)}
+                            data-aos="fade-up"
+                            data-aos-once="true"
+                        >
+                            <div className="card-image-1">
+                                <div className="d-text">
+                                    <h3>{val.title}</h3>
+                                    <h5 className="d-tag">{val.tag}</h5>
+                                </div>
+                                <img src={val.img} alt="gallery" />
+                            </div>
+                        </div>
+                    ))}
+                </Masonry>
+            </div>
+        ));
+    };
+*/
+
 
     const lighbxList = [
         {
@@ -198,8 +323,36 @@ const Gallery= function() {
             blockquote: "Full Solution for Jewelry Management",
             span: "Shady Elsayed",
             lighbx: 4,
+        },
+        {
+            title: "City Stores",
+            description: "Imagine Uber Eats for clothes! Our mobile app connects shoppers with nearby boutiques, making it easy to discover and buy trendy apparel from local stores. For stores, our user-friendly dashboard streamlines inventory uploads, helping them showcase their latest offerings to eager fashion enthusiasts.",
+            client: "Graduation Project",
+            type: "Mobile App",
+            year: "2023",
+            preview: "only on request",
+            href: "",
+            images: [cityStores1, cityStores2, cityStores3, cityStores4, cityStores5, cityStores6, cityStores7, cityStores8, cityStores9, cityStores10, cityStores11, cityStores12, cityStores13, cityStores14, cityStores15, cityStores16, cityStores17],
+            blockquote: "Full Solution for Local Stores",
+            span: "Shady Elsayed",
+            lighbx: 5,
+        },
+        {
+            title: "Alrehaili",
+            description: "Alrehaili is an Islamic website that provides blogs, articles, audios and videos about Islam. for sheikh Ibrahim Alrehaili.",
+            client: "Sheikh Ibrahim Alrehaili",
+            type: "Website",
+            year: "2021",
+            preview: "al-rehaili.net",
+            href: "https://al-rehaili.net/",
+            images: [alRehaili1, alRehaili2, alRehaili3, alRehaili4, alRehaili5],
+            blockquote: "Full Solution for Islamic Content",
+            span: "Shady Elsayed",
+            lighbx: 6,
         }
         ];
+
+ 
 
     return(
             <div className="container">
@@ -210,25 +363,7 @@ const Gallery= function() {
                         <div className="space-border"></div>
                     </div>
                 </div>
-                 <Masonry className={"row my-gallery-class"} elementType={"div"}>
-                     {
-                         MasonryList.map((val, i) => (
-                                <div className="col-lg-6 image-element-class de_modal" onClick={() => handleBtnClick(val.lighbx)}
-                                    data-aos="fade-up"
-                                    data-aos-once="true"
-                                    >
-                                    <div className="card-image-1">
-                                        <div className="d-text">
-                                            <h3>{val.title}</h3>
-                                            <h5 className="d-tag">{val.tag}</h5>
-                                        </div>
-                                        <img src={val.img} alt="gallery"/>
-                                    </div>
-                                </div>
-                            ))
-                     }
-                  </Masonry>
-
+                {StackMasonry}
 
                 {
                     lighbxList.map((val, i) => (
@@ -240,15 +375,30 @@ const Gallery= function() {
                                 <div className="mainLightbox container">
                                     <div className="row g-5">
                                         <div className="col-lg-8">
+                                            {val.lighbx !== 5 ?
                                             <div className="row g-4">
                                             {
                                                 val.images.map((val, i) => (
-                                                        <div className="col-lg-10 item">
+                                                        <div key={i} className="col-lg-10 item">
                                                             <img src={val} alt="galleryimage" className="img-fluid"/>
                                                         </div>
                                                 ))
                                             }
-                                            </div>
+                                            </div>:
+                                                <div className="row g-4">
+                                                    {val.images.map((image, i) => (
+                                                        <div key={i} className="col-lg-4 item">
+                                                            <img
+                                                                src={image}
+                                                                alt={`galleryimage-${i}`}
+                                                                className="img-fluid"
+                                                                style={{ maxHeight: '500px' }}
+                                                            />
+                                                            <hr/>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            }
                                         </div>
 
                                         <div className="col-lg-4 de_project-info">

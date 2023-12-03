@@ -574,6 +574,13 @@ blockquote.q-big .d-big {
       font-size: 22px;
       transition: .5s;
     }
+    h4{
+        opacity: 0;
+        margin: 0;
+        font-size: 16px;
+        transition: .5s;
+      color: #ffffff;
+    }
     h5 {
       opacity: 0;
       font-weight: 300;
@@ -606,6 +613,10 @@ blockquote.q-big .d-big {
         opacity: 1;
         transition: .5s;
       }
+        h4{
+            opacity: 1;
+            transition: .5s;
+        }
       h5 {
         opacity: 1;
         bottom: 5%;
