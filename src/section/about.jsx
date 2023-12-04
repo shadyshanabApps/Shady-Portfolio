@@ -71,8 +71,24 @@ useEffect(() => {
 			value: 70
 		},
 		{
-			text: "Vite",
-			value: 90
+			text: "PHP",
+			value: 70
+		},
+		{
+			text: "Python",
+			value: 80,
+		},
+		{
+			text: "mysql",
+			value: 80
+		},
+		{
+			text: "java",
+			value: 70
+		},
+		{
+			text: "C#",
+			value: 50
 		},
 		]
 
@@ -84,50 +100,62 @@ useEffect(() => {
 		const rowItems = items.slice(i, i + columnsPerRow);
 		const row = (
 			<div className="row" key={i / columnsPerRow}>
-				{rowItems.map((item, index) => (
+				{
+					windowWidth < 768 ?
+					rowItems.map((item, index) => (
 					<div
-						className="col-lg-3 col-md-4 col-sm-6 p-5 text-center"
+						className="col-lg-3 col-md-4 col-sm-6 p-2 text-center"
 						key={index}
 						data-aos="fade"
 						data-aos-delay={index * 100}
 						data-aos-duration="800"
 						data-aos-easing="ease"
 						data-aos-once="true"
+						style={{marginTop: '20px'}}
 					>
-						{
-							windowWidth < 768 ?
-							<div className="d-skill">
+							<div className="d-skill" >
 								<div style={{display: 'flex', justifyContent: 'start'}}>
 									<span>{item.text}</span>
 								</div>
 								<Skillbar bgColor={"#ad8e6d"} progress={item.value} />
-							</div>:
-								<>
-						<AnimatedProgressProvider valueStart={0} valueEnd={item.value}
-						>
-							{(value) => {
-								const roundedValue = Math.round(value);
-								return (
-									<CircularProgressbar
-										value={value}
-										strokeWidth={3}
-										text={`${roundedValue}.0%`}
-										styles={buildStyles({
-											pathTransition: "none",
-											textColor: "white",
-											textSize: "8px",
-											pathColor: "#cf1f1f",
-											trailColor: "#2f3134",
-										})}
-									/>
-								);
-							}}
-						</AnimatedProgressProvider>
-						<h4 className="mt-2">{item.text}</h4>
-					</>
-					}
+							</div>
 					</div>
-				))}
+				)) :
+						rowItems.map((item, index) => (
+							<div
+								className="col-lg-3 col-md-4 col-sm-6 p-5 text-center"
+								key={index}
+								data-aos="fade"
+								data-aos-delay={index * 100}
+								data-aos-duration="800"
+								data-aos-easing="ease"
+								data-aos-once="true"
+							>
+							<AnimatedProgressProvider valueStart={0} valueEnd={item.value}
+							>
+								{(value) => {
+									const roundedValue = Math.round(value);
+									return (
+										<CircularProgressbar
+											value={value}
+											strokeWidth={3}
+											text={`${roundedValue}.0%`}
+											styles={buildStyles({
+												pathTransition: "none",
+												textColor: "white",
+												textSize: "8px",
+												pathColor: "#cf1f1f",
+												trailColor: "#2f3134",
+											})}
+										/>
+									);
+								}}
+							</AnimatedProgressProvider>
+							<h4 className="mt-2">{item.text}</h4>
+							</div>
+						))
+
+				}
 			</div>
 		);
 		rows.push(row);
