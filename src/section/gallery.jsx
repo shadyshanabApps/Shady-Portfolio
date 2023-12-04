@@ -53,6 +53,14 @@ import alRehaili2 from '../assets/projects/alrehaili/alrehaili2.PNG';
 import alRehaili3 from '../assets/projects/alrehaili/alrehaili3.PNG';
 import alRehaili4 from '../assets/projects/alrehaili/alrehaili4.PNG';
 import alRehaili5 from '../assets/projects/alrehaili/alrehaili5.PNG';
+import veilya1 from '../assets/projects/veilya/veilya1.png';
+import veilya2 from '../assets/projects/veilya/veilya2.PNG';
+import veilya3 from '../assets/projects/veilya/veilya3.PNG';
+import veilya4 from '../assets/projects/veilya/veilya4.PNG';
+import veilya5 from '../assets/projects/veilya/veilya5.PNG';
+import veilya6 from '../assets/projects/veilya/veilya6.PNG';
+import veilya7 from '../assets/projects/veilya/veilya7.PNG';
+import veilya8 from '../assets/projects/veilya/veilya8.PNG';
 
 AOS.init();
 
@@ -112,19 +120,27 @@ const Gallery= function() {
             row: 1,
         },
         {
-            img : cityStores4,
-            title : "City Stores",
-            tag : "mobile app",
-            lighbx: 5,
-            stack: "React Native",
-            row: 2,
-        },
-        {
             img : alRehaili1,
             title : "Alrehaili",
             tag : "website",
             lighbx : 6,
             stack: "Wordpress",
+            row: 2,
+        },
+        {
+            img : veilya1,
+            title : "Veilya",
+            tag : "website",
+            lighbx : 7,
+            stack: "Wordpress",
+            row: 2,
+        },
+        {
+            img : cityStores4,
+            title : "City Stores",
+            tag : "mobile app",
+            lighbx: 5,
+            stack: "React Native",
             row: 2,
         },
     ];
@@ -349,6 +365,19 @@ const Gallery= function() {
             blockquote: "Full Solution for Islamic Content",
             span: "Shady Elsayed",
             lighbx: 6,
+        },
+        {
+            title: "Veilya",
+            description: "Veilya is an online store for hijabs and accessories.",
+            client: "Veilya",
+            type: "Website",
+            year: "2021",
+            preview: "veilya.com",
+            href: "https://veilya.com/",
+            images: [veilya1, veilya2, veilya3, veilya4, veilya5, veilya6, veilya7, veilya8],
+            blockquote: "Full Solution for Online Store",
+            span: "Shady Elsayed",
+            lighbx: 7,
         }
         ];
 
