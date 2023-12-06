@@ -2,24 +2,6 @@ import React from 'react';
 import Masonry from "react-masonry-component";
 import { createGlobalStyle } from 'styled-components';
 import AOS from 'aos';
-import Capture from '../assets/projects/lyceebalzak/Capture.PNG';
-import lyceeDashboard from '../assets/projects/lyceebalzak/lycee-dashboard.PNG';
-import lyceeAccounts from '../assets/projects/lyceebalzak/lycee-accounts.PNG';
-import lyceeJournals from '../assets/projects/lyceebalzak/lycee-journals.PNG';
-import lyceeSettings from '../assets/projects/lyceebalzak/lycee-settings.PNG';
-import lyceePermissions from '../assets/projects/lyceebalzak/lycee-permissions.PNG';
-import lyceeMenu from '../assets/projects/lyceebalzak/lycee-menu.PNG';
-import lyceeReports from '../assets/projects/lyceebalzak/lycee-reports.PNG';
-import lyceePurchaseReport from '../assets/projects/lyceebalzak/lycee-purchase-report.PNG';
-import hrAddbulkEmployees from '../assets/projects/hr/hr-addbulk-employees.PNG';
-import hrAttendance from '../assets/projects/hr/hr-attendance.PNG';
-import hrContracts from '../assets/projects/hr/hr-contracts.PNG';
-import hrOffers from '../assets/projects/hr/hr-offers.PNG';
-import hrDepartments from '../assets/projects/hr/hr-departments.PNG';
-import hrEmployeesSalary from '../assets/projects/hr/hr-employees-salary.PNG';
-import hrHome from '../assets/projects/hr/hr-home.PNG';
-import hrPayrollDep from '../assets/projects/hr/hr-payroll-dep.PNG';
-import hrPayrollReport from '../assets/projects/hr/hr-payroll-report.PNG';
 import jewelryAddPurchase1 from '../assets/projects/jewelry/jewelry-add-purchase1.PNG';
 import jewelryAddPurchase2 from '../assets/projects/jewelry/jewelry-add-purchase2.PNG';
 import jewelryAddPurchase3 from '../assets/projects/jewelry/jewelry-add-purchase3.PNG';
@@ -63,6 +45,36 @@ import standard5 from '../assets/projects/standard-erp/standard5.PNG';
 import standard6 from '../assets/projects/standard-erp/standard6.PNG';
 import standard7 from '../assets/projects/standard-erp/standard7.PNG';
 import standard8 from '../assets/projects/standard-erp/standard8.PNG';
+import hr1 from '../assets/projects/hr/hr1.PNG';
+import hr2 from '../assets/projects/hr/hr2.PNG';
+import hr3 from '../assets/projects/hr/hr3.PNG';
+import hr4 from '../assets/projects/hr/hr4.PNG';
+import hr5 from '../assets/projects/hr/hr5.PNG';
+import hr6 from '../assets/projects/hr/hr6.PNG';
+import hr7 from '../assets/projects/hr/hr7.PNG';
+import hr8 from '../assets/projects/hr/hr8.PNG';
+import hr9 from '../assets/projects/hr/hr9.PNG';
+import hr10 from '../assets/projects/hr/hr10.PNG';
+import hr11 from '../assets/projects/hr/hr11.PNG';
+import hr12 from '../assets/projects/hr/hr12.PNG';
+import hr13 from '../assets/projects/hr/hr13.PNG';
+import hr14 from '../assets/projects/hr/hr14.PNG';
+import lycee1 from '../assets/projects/lyceebalzak/lycee1.PNG';
+import lycee2 from '../assets/projects/lyceebalzak/lycee2.PNG';
+import lycee3 from '../assets/projects/lyceebalzak/lycee3.PNG';
+import lycee4 from '../assets/projects/lyceebalzak/lycee4.PNG';
+import lycee5 from '../assets/projects/lyceebalzak/lycee5.PNG';
+import lycee6 from '../assets/projects/lyceebalzak/lycee6.PNG';
+import lycee7 from '../assets/projects/lyceebalzak/lycee7.PNG';
+import lycee8 from '../assets/projects/lyceebalzak/lycee8.PNG';
+import lycee9 from '../assets/projects/lyceebalzak/lycee9.PNG';
+import lycee10 from '../assets/projects/lyceebalzak/lycee10.PNG';
+import lycee11 from '../assets/projects/lyceebalzak/lycee11.PNG';
+import lycee12 from '../assets/projects/lyceebalzak/lycee12.PNG';
+import lycee13 from '../assets/projects/lyceebalzak/lycee13.PNG';
+import lycee14 from '../assets/projects/lyceebalzak/lycee14.PNG';
+import lycee15 from '../assets/projects/lyceebalzak/lycee15.PNG';
+import lycee16 from '../assets/projects/lyceebalzak/lycee16.PNG';
 
 
 AOS.init();
@@ -91,7 +103,7 @@ const Gallery= function() {
 
     const MasonryList = [
         {
-            img : Capture,
+            img : lycee1,
             title : "Lycee Balzak ERP",
             tag : "website",
             lighbx : 1,
@@ -107,7 +119,7 @@ const Gallery= function() {
             row: 1,
         },
         {
-            img : hrHome,
+            img : hr1,
             title : "HR",
             tag : "website",
             lighbx : 3,
@@ -254,7 +266,7 @@ const Gallery= function() {
             year : "2022",
             preview : "erp.egycodes.com",
             href : "http://www.erp.egycodes.com/",
-            images : [Capture,lyceeDashboard,lyceeAccounts,lyceeJournals,lyceeSettings,lyceePermissions,lyceeMenu,lyceeReports,lyceePurchaseReport],
+            images : [lycee1,lycee2,lycee13,lycee16,lycee3,lycee4,lycee5,lycee6,lycee7,lycee8,lycee9,lycee10,lycee11,lycee12,lycee14,lycee15],
             blockquote : "Full Solution for School Management",
             span : "Shady Elsayed",
             lighbx : 1,
@@ -316,7 +328,7 @@ const Gallery= function() {
             year : "2022",
             preview : "hr.egycodes.com",
             href : "http://www.hr.egycodes.com/",
-            images : [hrHome,hrAddbulkEmployees,hrAttendance,hrContracts,hrOffers,hrDepartments,hrEmployeesSalary,hrPayrollDep,hrPayrollReport],
+            images : [hr1,hr2,hr3,hr4,hr5,hr6,hr7,hr8,hr9,hr10,hr11,hr12,hr13,hr14],
             blockquote: "Full Solution for HR Management",
             span: "Shady Elsayed",
             lighbx : 3,
