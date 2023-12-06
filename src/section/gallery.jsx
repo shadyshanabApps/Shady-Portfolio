@@ -11,12 +11,6 @@ import lyceePermissions from '../assets/projects/lyceebalzak/lycee-permissions.P
 import lyceeMenu from '../assets/projects/lyceebalzak/lycee-menu.PNG';
 import lyceeReports from '../assets/projects/lyceebalzak/lycee-reports.PNG';
 import lyceePurchaseReport from '../assets/projects/lyceebalzak/lycee-purchase-report.PNG';
-import standardAccounts from '../assets/projects/standard-erp/standard-accounts.PNG';
-import standardAddAccounts from '../assets/projects/standard-erp/standard-add-accounts.PNG';
-import standardAddItems from '../assets/projects/standard-erp/standard-add-item.PNG';
-import standardAddPricelist from '../assets/projects/standard-erp/standard-add-pricelist.PNG';
-import standardJournals from '../assets/projects/standard-erp/standard-journals.PNG';
-import standardViewPricelist from '../assets/projects/standard-erp/standard-view-pricelist.PNG';
 import hrAddbulkEmployees from '../assets/projects/hr/hr-addbulk-employees.PNG';
 import hrAttendance from '../assets/projects/hr/hr-attendance.PNG';
 import hrContracts from '../assets/projects/hr/hr-contracts.PNG';
@@ -61,6 +55,15 @@ import veilya5 from '../assets/projects/veilya/veilya5.PNG';
 import veilya6 from '../assets/projects/veilya/veilya6.PNG';
 import veilya7 from '../assets/projects/veilya/veilya7.PNG';
 import veilya8 from '../assets/projects/veilya/veilya8.PNG';
+import standard1 from '../assets/projects/standard-erp/standard1.PNG';
+import standard2 from '../assets/projects/standard-erp/standard2.PNG';
+import standard3 from '../assets/projects/standard-erp/standard3.PNG';
+import standard4 from '../assets/projects/standard-erp/standard4.PNG';
+import standard5 from '../assets/projects/standard-erp/standard5.PNG';
+import standard6 from '../assets/projects/standard-erp/standard6.PNG';
+import standard7 from '../assets/projects/standard-erp/standard7.PNG';
+import standard8 from '../assets/projects/standard-erp/standard8.PNG';
+
 
 AOS.init();
 
@@ -96,7 +99,7 @@ const Gallery= function() {
             row: 1,
         },
         {
-            img : standardAccounts,
+            img : standard1,
             title : "Standard ERP",
             tag : "website",
             lighbx : 2,
@@ -287,7 +290,7 @@ const Gallery= function() {
             year : "2023",
             preview : "erp.egycodes.com",
             href : "http://www.jewelary.egycodes.com/",
-            images : [standardAccounts,standardAddAccounts,standardAddItems,standardAddPricelist,standardJournals,standardViewPricelist],
+            images : [standard1,standard2,standard3,standard4,standard5,standard6,standard7,standard8],
             blockquote : "Full Solution for Enterprise Management",
             span : "Shady Elsayed",
             lighbx : 2,
