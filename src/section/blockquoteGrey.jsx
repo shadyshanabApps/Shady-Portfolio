@@ -24,8 +24,8 @@ const Mblockquote = () => {
                             <div className="spacer-double"></div>
                             <blockquote className="q-big">
                                 <i className="d-big icon_quotations"></i>
-                                “What is defeat? Nothing but education. Nothing but the first steps to something better.”
-                                <span className="d-quote-by">Wendell Phillips</span>
+                                “Notice that the stiffest tree is most easily cracked, while the bamboo or willow survives by bending with the wind.”
+                                <span className="d-quote-by">Bruce Lee</span>
                             </blockquote>
                             <div className="spacer-double"></div>
                             <div className="spacer-double"></div>

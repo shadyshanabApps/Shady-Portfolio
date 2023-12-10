@@ -101,13 +101,13 @@ const Gallery= function() {
     };
 
 
-    const MasonryList = [
+    const MasonryList = {
+      "React": [
         {
             img : lycee1,
             title : "Lycee Balzak ERP",
             tag : "website",
             lighbx : 1,
-            stack: "React",
             row: 1,
         },
         {
@@ -115,7 +115,6 @@ const Gallery= function() {
             title : "Standard ERP",
             tag : "website",
             lighbx : 2,
-            stack: "React",
             row: 1,
         },
         {
@@ -123,7 +122,6 @@ const Gallery= function() {
             title : "HR",
             tag : "website",
             lighbx : 3,
-            stack: "React",
             row: 1,
         },
         {
@@ -131,15 +129,15 @@ const Gallery= function() {
             title : "Jewelry",
             tag : "website",
             lighbx : 4,
-            stack: "React",
             row: 1,
         },
+],
+        "Wordpress": [
         {
             img : alRehaili1,
             title : "Alrehaili",
             tag : "website",
             lighbx : 6,
-            stack: "Wordpress",
             row: 2,
         },
         {
@@ -147,120 +145,101 @@ const Gallery= function() {
             title : "Veilya",
             tag : "website",
             lighbx : 7,
-            stack: "Wordpress",
             row: 2,
         },
+    ],
+        "React Native": [
         {
             img : cityStores4,
             title : "City Stores",
             tag : "mobile app",
             lighbx: 5,
-            stack: "React Native",
             row: 2,
         },
-    ];
+    ],
+    }
 
-     const stackGroups = MasonryList.reduce((groups, item) => {
-        const val = item.stack;
-        groups[val] = groups[val] || [];
-        groups[val].push(item);
-        return groups;
-    }, {});
+    //  const stackGroups = MasonryList.reduce((groups, item) => {
+    //     const val = item.stack;
+    //     groups[val] = groups[val] || [];
+    //     groups[val].push(item);
+    //     return groups;
+    // }, {});
+    //
+    // const StackMasonry = Object.entries(stackGroups).map(([stack, stackItems]) => (
+    //     <div key={stack} style={{marginBottom: '50px'}}>
+    //         <h2>{stack}</h2>
+    //         <Masonry className={"row my-gallery-class"} elementType={"div"} >
+    //             {stackItems.map((val, i) => (
+    //                 <div
+    //                     className="col-lg-6 image-element-class de_modal"
+    //                     onClick={() => handleBtnClick(val.lighbx)}
+    //                     data-aos="fade-up"
+    //                     data-aos-once="true"
+    //                     key={i}
+    //                     style={stack === "React Native" ? {width: '250px'} : {}}
+    //                 >
+    //                     <div className="card-image-1">
+    //                         <div className="d-text">
+    //                             <div>
+    //                                 <h3>{val.title}</h3>
+    //                                 {/*<h4>{val.stack}</h4>*/}
+    //                             </div>
+    //                             <h5 className="d-tag">{val.tag}</h5>
+    //                         </div>
+    //                         <img src={val.img} alt="gallery"
+    //                              style={stack === "React Native" ? {maxHeight: '500px',objectFit: 'fill'} : {}}/>
+    //                     </div>
+    //                 </div>
+    //             ))}
+    //         </Masonry>
+    //     </div>
+    // ));
 
-    const StackMasonry = Object.entries(stackGroups).map(([stack, stackItems]) => (
+    const stackGroups = Object.entries(MasonryList).map(([stack, stackItems]) => (
         <div key={stack} style={{marginBottom: '50px'}}>
             <h2>{stack}</h2>
             <Masonry className={"row my-gallery-class"} elementType={"div"} >
                 {stackItems.map((val, i) => (
                     <div
-                        className="col-lg-6 image-element-class de_modal"
-                        onClick={() => handleBtnClick(val.lighbx)}
-                        data-aos="fade-up"
-                        data-aos-once="true"
-                        key={i}
-                        style={stack === "React Native" ? {width: '250px'} : {}}
+                    className="col-lg-6 image-element-class de_modal"
+                    onClick={() => handleBtnClick(val.lighbx)}
+                    data-aos="fade-up"
+                    data-aos-once="true"
+                    key={i}
+                    style={stack === "React Native" ? {width: '250px'} : {}}
                     >
-                        <div className="card-image-1">
-                            <div className="d-text">
-                                <div>
-                                    <h3>{val.title}</h3>
-                                    {/*<h4>{val.stack}</h4>*/}
-                                </div>
-                                <h5 className="d-tag">{val.tag}</h5>
-                            </div>
-                            <img src={val.img} alt="gallery"
-                                 style={stack === "React Native" ? {maxHeight: '500px',objectFit: 'fill'} : {}}/>
-                        </div>
+                    <div className="card-image-1">
+                        <div className="d-text">
+                    <div>
+                    <h3>{val.title}</h3>
+                    {/*<h4>{val.stack}</h4>*/}
                     </div>
-                ))}
-            </Masonry>
-        </div>
-    ));
-
-   /* const renderMasonryLayout = () => {
-        const rows = {};
-
-        // Group items by row number
-        MasonryList.forEach((item) => {
-            const { row } = item;
-            if (!rows[row]) {
-                rows[row] = { stack: item.stack, items: [] };
-            }
-            rows[row].items.push(item);
-        });
-
-        // Generate Masonry layout components for each row with stack titles
-        return Object.keys(rows).map((row) => (
-            <div key={`row_${row}`}>
-                <h2>{rows[row].stack}</h2>
-                <Masonry key={`masonry_${row}`} className={"row my-gallery-class"} elementType={"div"}>
-                    {rows[row].items.map((val, i) => (
-                        <div
-                            key={`item_${row}_${i}`}
-                            className="col-lg-6 image-element-class de_modal"
-                            onClick={() => handleBtnClick(val.lighbx)}
-                            data-aos="fade-up"
-                            data-aos-once="true"
-                        >
-                            <div className="card-image-1">
-                                <div className="d-text">
-                                    <h3>{val.title}</h3>
-                                    <h5 className="d-tag">{val.tag}</h5>
-                                </div>
-                                <img src={val.img} alt="gallery" />
-                            </div>
-                        </div>
+                    <h5 className="d-tag">{val.tag}</h5>
+                    </div>
+                    <img src={val.img} alt="gallery"
+                    style={stack === "React Native" ? {maxHeight: '500px',objectFit: 'fill'} : {}}/>
+                    </div>
+                    </div>
                     ))}
-                </Masonry>
+            </Masonry>
             </div>
-        ));
-    };
-*/
+            ));
+
+
 
 
     const lighbxList = [
         {
             title : "Lycee Balzak ERP",
-            description : "Developed an efficient ERP system tailored for school\n" +
-                "                                    management.\n" +
-                "                                    Implemented modules for stocks, accounting,\n" +
-                "                                    transportation, student affairs, charts, admission, and\n" +
-                "                                    dashboard.\n" +
-                "                                    Managed school inventory, expenses, and budgets\n" +
-                "                                    through the stocks and accounting modules.\n" +
-                "                                    Streamlined transportation logistics, including bus\n" +
-                "                                    routes, schedules, and expenses.\n" +
-                "                                    Enhanced student affairs management with features\n" +
-                "                                    for regestration, class accomodations, and parent\n" +
-                "                                    information.\n" +
-                "                                    Utilized data visualization charts for insightful analysis\n" +
-                "                                    and decision-making.\n" +
-                "                                    Simplified the student admission process with online\n" +
-                "                                    forms, document management, and enrollment\n" +
-                "                                    tracking.\n" +
-                "                                    Created an intuitive dashboard and comprehensive\n" +
-                "                                    reports for monitoring finances, attendance,\n" +
-                "                                    transportation, and student performance.",
+            description : "Developed an efficient ERP system tailored for school management. \n" +
+                "Implemented modules for (Accounting - Journals - Sales - Purchases - Stocks - Reports - Permissions - Dashboard). \n" +
+                "Managed school inventory, expenses, and budgets through the stocks and accounting modules. \n" +
+                "Streamlined transportation logistics, including bus routes, schedules, and expenses. \n" +
+                "Enhanced student affairs management with features for registration, class accommodations, and parent information. \n" +
+                "Utilized data visualization charts for insightful analysis and decision-making. \n" +
+                "Simplified the student admission process with online forms, document management, and enrollment tracking. \n" +
+                "Created an intuitive dashboard and comprehensive reports for monitoring finances, attendance, transportation, and student performance.",
             client : "Lycée Balzac",
             type : "ERP",
             year : "2022",
@@ -273,29 +252,7 @@ const Gallery= function() {
         },
         {
             title : "Satndard ERP",
-            description: `Developed a comprehensive ERP system customized for enterprise management.
-                  Implemented modules covering various aspects:
-                  - Finance & Accounting
-                  - Inventory Management
-                  - Human Resources
-                  - Customer Relationship Management (CRM)
-                  - Supply Chain & Logistics
-
-                  Managed financial activities, including budgeting, expense tracking,
-                  and revenue analysis through the Finance & Accounting module.
-                  Streamlined inventory control, procurement, and order management
-                  with the Inventory Management module.
-
-                  Optimized supply chain logistics, from procurement to distribution,
-                  ensuring efficient handling of resources and products.
-
-                  Leveraged data visualization tools for insightful analytics and
-                  decision-making across all modules.
-
-                  Facilitated smooth workflows and data-driven decision-making for
-                  enterprise-wide operations.
-                  
-                  Full Reports for all modules.
+            description: `Developed a comprehensive ERP system customized for enterprise management. Implemented modules covering various aspects: (Accounting - Journals - Sales - Purchases - Stocks - Reports - Permissions)
                   `,
             client : "Standard",
             type : "ERP",
@@ -309,18 +266,7 @@ const Gallery= function() {
         },
         {
             title : "HR",
-            description : "Developed a comprehensive HR system for employee management.\n" +
-                "                  Implemented modules covering various aspects:\n" +
-                "                  - Employee Management\n" +
-                "                  - Payroll Management\n" +
-                "                  - Recruitment Management\n" +
-                "                  - Performance Management\n" +
-                "                  - Time & Attendance Management\n" +
-                "                  - Leave Management\n" +
-                "                  - Expense Management\n" +
-                "                  - Document Management\n" +
-                "                  - Reports\n" +
-                "                  - Dashboard\n"
+            description : "Developed a comprehensive HR system. Implemented modules covering various aspects: (Attendance- Payroll - Recruitment - Performance Management - Time & Attendance - Leave - Expense - Document - Reports - Dashboard)"
                 ,
 
             client : "Standard",
@@ -407,7 +353,7 @@ const Gallery= function() {
                         <div className="space-border"></div>
                     </div>
                 </div>
-                {StackMasonry}
+                {stackGroups}
 
                 {
                     lighbxList.map((val, i) => (
