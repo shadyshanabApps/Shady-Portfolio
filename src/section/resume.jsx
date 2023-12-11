@@ -26,7 +26,10 @@ AOS.init();
 const Resume = () => {
 
     const [lighbx, setlighbx] = useState(0);
+    const [scrollPos, setScrollPos] = useState(0); // New state to store scroll position
+
     const handleBtnClick = (index) => {
+        setScrollPos(window.scrollY); // Store current scroll position
         setlighbx(index);
         var x = document.getElementsByTagName("BODY")[0];
         x.style.overflow = "hidden";
@@ -35,6 +38,7 @@ const Resume = () => {
         setlighbx(0);
         var x = document.getElementsByTagName("BODY")[0];
         x.style.overflow = "auto";
+        window.scrollTo(0, scrollPos); // Use scroll position to scroll to that point
     };
 
     const experience = [
@@ -42,7 +46,8 @@ const Resume = () => {
             title : "Front End Developer",
             company : "Egy Codes",
             date : "2022 - Present",
-            description : "Developed and maintained responsive web pages using React, HTML, CSS, and JavaScript, Typescript Worked closely with designers to ensure the website'sdesign and layout were accurately implemented Collaborated with back-end developers to integratefront-end and back-end systems Used Reducer pattern to manage application stateand improve user experience Assisted in the development of new features andfunctionality Debugged and tested code to ensure high-quality andbug-free application Gained hands-on experience with Git version controlsystem",
+            description : "As a Front End Developer at Egy Codes, I contributed to developing ERP solutions encompassing diverse modules such as accounting, journals, sales, purchases, stocks, HR, CRM, and more. My role involved crafting intuitive user interfaces and seamless interactions for these modules within the ERP system." +
+                "using React, HTML, CSS,JavaScript, Typescript , Redux , Redux-Saga , Ant Design , Material UI , Styled Components , Axios , Git , GitLab , devops",
         },
         {
             title : "WordPress Developer",
@@ -109,6 +114,13 @@ const Resume = () => {
             date : "2020",
             description : "",
             lighbx : 6
+        },
+        {
+            title : "ICDL",
+            issuer : "Success Academy, Microsoft",
+            date : "2019",
+            description : "",
+            lighbx : 7
         }
 
     ]
@@ -159,10 +171,13 @@ const Resume = () => {
          {
               title : "ICDL",
               issuer : "Success Academy, Microsoft",
+                date: "2019",
               images: [ICDL],
               lightbx : 7,
        }
        ]
+
+
 
 	return(
 		<div className="container">
@@ -266,7 +281,7 @@ const Resume = () => {
                         {/*        </p>*/}
                         {/*    </li>*/}
                         {/*</ul>*/}
-                        <ul className="d_timeline" >
+                        <ul className="d_timeline" id="education">
                         {
                             education.map((item , index) => {
                                 return(
@@ -322,7 +337,7 @@ const Resume = () => {
                         {/*    </li>*/}
                         {/*</ul>*/}
                         {
-                            <ul className="d_timeline">
+                            <ul className="d_timeline" id="certificates">
                                 {certificates.map((item, index) => {
                                     return (
                                         <li className="d_timeline-item" key={index}>
@@ -353,7 +368,6 @@ const Resume = () => {
                                 <div className="mainLightbox container">
                                     <div className="row g-5">
                                         <div className="col-lg-8">
-                                            {val.lightbx !== 5 ?
                                                 <div className="row g-4">
                                                     {
                                                         val.images.map((val, i) => (
@@ -362,21 +376,7 @@ const Resume = () => {
                                                             </div>
                                                         ))
                                                     }
-                                                </div>:
-                                                <div className="row g-4">
-                                                    {val.images.map((image, i) => (
-                                                        <div key={i} className="col-lg-4 item">
-                                                            <img
-                                                                src={image}
-                                                                alt={`galleryimage-${i}`}
-                                                                className="img-fluid"
-                                                                style={{ maxHeight: '500px' }}
-                                                            />
-                                                            <hr/>
-                                                        </div>
-                                                    ))}
                                                 </div>
-                                            }
                                         </div>
 
                                         <div className="col-lg-4 de_project-info">
