@@ -7,26 +7,18 @@ import Blockquote from '../section/blockquoteGrey';
 import Whatido from '../section/whatido';
 import Gallery from '../section/gallery';
 import Resume from '../section/resume';
-import Counter from '../section/counterGrey';
 import Blog from '../section/blog';
 import Contact from '../section/contactGrey';
 import Footer from '../section/footer';
 import Preloader from "../layout/Preloader";
 import ScrollToTopBtn from '../layout/ScrollToTop';
 import { GlobalStyles } from './style/grey';
-import {useContext, useEffect} from "react";
-import {ScrollContext} from "./HomeGreyPages/ScrollContext";
+
 
 const image1 ="./img/background/l11.jpg";
 
 function HomeGrey() {
-  const { prevScrollPosition, setPrevScrollPosition } = useContext(ScrollContext);
 
-  useEffect(() => {
-    if (prevScrollPosition !== 0)
-    window.scrollTo({ top: prevScrollPosition, behavior: 'smooth' });
-       setPrevScrollPosition(0);
-  }, [prevScrollPosition]);
 
   return (
     <>
