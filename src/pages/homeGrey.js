@@ -14,10 +14,20 @@ import Footer from '../section/footer';
 import Preloader from "../layout/Preloader";
 import ScrollToTopBtn from '../layout/ScrollToTop';
 import { GlobalStyles } from './style/grey';
+import {useContext, useEffect} from "react";
+import {ScrollContext} from "./HomeGreyPages/ScrollContext";
 
 const image1 ="./img/background/l11.jpg";
 
-function home() {
+function HomeGrey() {
+  const { prevScrollPosition, setPrevScrollPosition } = useContext(ScrollContext);
+
+  useEffect(() => {
+    if (prevScrollPosition !== 0)
+    window.scrollTo({ top: prevScrollPosition, behavior: 'smooth' });
+       setPrevScrollPosition(0);
+  }, [prevScrollPosition]);
+
   return (
     <>
     <GlobalStyles/>
@@ -53,12 +63,12 @@ function home() {
 
       {/* Gallery */}
       <section id="gallery">
-        {/* <Gallery/> */}
+        <Gallery/>
       </section>
 
       {/* Gallery */}
       <section id="resume" className="pb-0">
-        {/* <Resume/> */}
+        <Resume/>
         {/*<Counter/>*/}
       </section>
 
@@ -90,4 +100,4 @@ function home() {
   );
 }
 
-export default home;
+export default HomeGrey;
