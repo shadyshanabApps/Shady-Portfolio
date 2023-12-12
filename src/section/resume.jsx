@@ -18,6 +18,8 @@ import ICDL from '../assets/certificates/ICDL.jpeg';
 import goldenJubileeHonor1 from '../assets/certificates/goldenJubileeHonor 1.jpeg';
 import goldenJubileeHonor2 from '../assets/certificates/goldenJubileeHonor 2.jpeg';
 import statementFirstOfBatch from '../assets/certificates/statementFirstOfBatch.jpeg';
+import LazyLoad from 'react-lazyload';
+
 
 AOS.init();
 
@@ -280,6 +282,7 @@ const Resume = () => {
                                                 <div className="row g-4">
                                                     {
                                                         val.images.map((val, i) => (
+                                            
                                                             <div key={i} className="col-lg-10 item">
                                                                 <img src={val} alt="galleryimage" className="img-fluid"/>
                                                             </div>

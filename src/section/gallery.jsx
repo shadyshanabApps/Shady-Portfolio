@@ -75,6 +75,8 @@ import lycee13 from '../assets/projects/lyceebalzak/lycee13.PNG';
 import lycee14 from '../assets/projects/lyceebalzak/lycee14.PNG';
 import lycee15 from '../assets/projects/lyceebalzak/lycee15.PNG';
 import lycee16 from '../assets/projects/lyceebalzak/lycee16.PNG';
+import LazyLoad from 'react-lazyload';
+
 
 
 AOS.init();
@@ -155,48 +157,13 @@ const Gallery= function() {
     ],
     }
 
-    //  const stackGroups = MasonryList.reduce((groups, item) => {
-    //     const val = item.stack;
-    //     groups[val] = groups[val] || [];
-    //     groups[val].push(item);
-    //     return groups;
-    // }, {});
-    //
-    // const StackMasonry = Object.entries(stackGroups).map(([stack, stackItems]) => (
-    //     <div key={stack} style={{marginBottom: '50px'}}>
-    //         <h2>{stack}</h2>
-    //         <Masonry className={"row my-gallery-class"} elementType={"div"} >
-    //             {stackItems.map((val, i) => (
-    //                 <div
-    //                     className="col-lg-6 image-element-class de_modal"
-    //                     onClick={() => handleBtnClick(val.lighbx)}
-    //                     data-aos="fade-up"
-    //                     data-aos-once="true"
-    //                     key={i}
-    //                     style={stack === "React Native" ? {width: '250px'} : {}}
-    //                 >
-    //                     <div className="card-image-1">
-    //                         <div className="d-text">
-    //                             <div>
-    //                                 <h3>{val.title}</h3>
-    //                                 {/*<h4>{val.stack}</h4>*/}
-    //                             </div>
-    //                             <h5 className="d-tag">{val.tag}</h5>
-    //                         </div>
-    //                         <img src={val.img} alt="gallery"
-    //                              style={stack === "React Native" ? {maxHeight: '500px',objectFit: 'fill'} : {}}/>
-    //                     </div>
-    //                 </div>
-    //             ))}
-    //         </Masonry>
-    //     </div>
-    // ));
 
     const stackGroups = Object.entries(MasonryList).map(([stack, stackItems]) => (
         <div key={stack} style={{marginBottom: '50px'}}>
             <h3 className="s_border">{stack}</h3>
             <Masonry className={"row my-gallery-class"} elementType={"div"} >
                 {stackItems.map((val, i) => (
+                
                     <div
                     className="col-lg-6 image-element-class de_modal"
                     onClick={() => handleBtnClick(val.lighbx)}
