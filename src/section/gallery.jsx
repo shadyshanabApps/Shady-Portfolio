@@ -198,7 +198,7 @@ const Gallery= function() {
 
     const stackGroups = Object.entries(MasonryList).map(([stack, stackItems]) => (
         <div key={stack} style={{marginBottom: '50px'}}>
-            <h2>{stack}</h2>
+            <h3 className="s_border">{stack}</h3>
             <Masonry className={"row my-gallery-class"} elementType={"div"} >
                 {stackItems.map((val, i) => (
                     <div
