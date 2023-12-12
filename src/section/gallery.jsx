@@ -91,13 +91,9 @@ const Gallery= function() {
     const [lighbx, setlighbx] = React.useState(0);
     const handleBtnClick = (index) => {
       setlighbx(index);
-      //var x = document.getElementsByTagName("BODY")[0];
-      //x.style.overflow = "hidden";
     };
     const handleBtnClickclose = () => {
       setlighbx(0);
-      //var x = document.getElementsByTagName("BODY")[0];
-     // x.style.overflow = "auto";
     };
 
 
